@@ -133,14 +133,8 @@ Contributions are welcome! If you'd like to improve functionality, optimize perf
 
 ---
 
-## 📜 License
-This project is licensed under the **MIT License** — see the LICENSE file for details.
-
----
-
 ## 📬 Contact
 **Author:** Darshit Sarda  
-**Email:** darshitsarda10@gmail.com  
-**Email:** darshitsarda10@gmail.com  
+**Email:** darshitsarda10@gmail.com   
 **LinkedIn:** [linkedin.com/in/darshitsarda](https://www.linkedin.com/in/darshitsarda)  
 **GitHub:** [github.com/DarshitSarda](https://github.com/DarshitSarda)
