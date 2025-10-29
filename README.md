@@ -1,145 +1,146 @@
-📈 Options Market Analyzer – Max Pain & Put-Call Ratio Framework
-📊 Overview
+# 📊 NSE Option Analytics Automation — Max Pain & PCR Framework
 
-This Python-based framework automates the fetching, processing, and analysis of NSE Option Chain (OC) data for equities and indices (NIFTY & BANKNIFTY).
-It integrates two key analytical modules:
+### 📌 Overview  
+This repository unifies **Option Pain Theory** and **Put-Call Ratio (PCR) Analysis** into a single automation and analytics framework for the **Indian derivatives market**.  
+It enables users to:  
+- 🔹 Track **option sentiment dynamics** across expiries  
+- 🔹 Identify **price gravitation levels** via **Max Pain**  
+- 🔹 Gauge **market bias** (bullish/bearish) using **PCR trends**  
+- 🔹 Conduct **expiry-wise comparative analysis** for equities and indices  
 
-🔹 Max Pain Analysis: Identifies the strike price where option writers experience the least combined loss.
+Built with a focus on **scalability**, **data accuracy**, and **resilience**, this project serves as a strong foundation for **quantitative option research**, **derivatives analytics**, and **strategy backtesting**.
 
-🔹 Put-Call Ratio (PCR) Analysis: Measures market sentiment across strikes, expiries, and instruments.
+---
 
-The project provides traders and analysts with structured data, expiry-wise summaries, and visual insights for informed decision-making.
+### ✨ Key Features  
+- ⚡ **Automated Data Fetching:** Pulls live NSE Option Chain data (JSON → CSV) for equities and indices  
+- 📈 **Max Pain Detection:** Computes strike with minimum total loss for option writers  
+- 📊 **PCR Analysis:** Calculates Put-Call Ratios at symbol and expiry levels  
+- 🧠 **Expiry-Wise Insights:** Generates consolidated CSV summaries for faster comparison  
+- 🧩 **Scalable Architecture:** Supports hundreds of equities with multi-threaded data fetch  
+- 🛠️ **Resilience:** Handles missing, malformed, or empty data files gracefully  
+- 📉 **Optional Visualization:** Enable charts to visualize Max Pain and PCR distribution  
 
-⚙️ Key Features
+---
 
-✅ Automated fetching of NSE option chain data
-✅ Handles 200+ equities and major indices concurrently
-✅ Max Pain calculation for equities and indices
-✅ Put-Call Ratio computation at symbol and expiry levels
-✅ Expiry-wise summary generation for streamlined analysis
-✅ Built-in retries, backoff, and JSON error handling
-✅ Optional visualization for Max Pain and PCR trends
+### 🏗️ Workflow  
+1. **Data Fetching** → Fetches live NSE Option Chain data for equities and indices  
+2. **Data Cleaning & Structuring** → Normalizes columns like Strike Price, Call OI, Put OI  
+3. **Max Pain Computation** → Finds strike with minimum total option writer loss  
+4. **PCR Computation** → Calculates PCR for each symbol and expiry  
+5. **Consolidation** → Aggregates expiry-wise summaries and index-wise reports  
+6. **Visualization (Optional)** → Enables charts with `ENABLE_PLOTS = True`
 
-🧩 Workflow
+---
 
-Data Fetching & Session Management
-
-Persistent HTTP session with correct headers and cookies
-
-Automatic retries and backoff for failed requests
-
-Option Chain Normalization
-
-Cleans and structures data: Strike Price, Call OI, Put OI, Change in OI, etc.
-
-Max Pain Computation
-
-Calculates total loss for option writers at each strike
-
-Identifies the strike with minimum total loss (Max Pain)
-
-Exports expiry-wise summaries
-
-Put-Call Ratio Computation
-
-Computes PCR = Total Put OI / Total Call OI
-
-Generates symbol-level and master PCR summaries
-
-Output Consolidation
-
-Organizes expiry-wise data for equities and indices
-
-Visualization (Optional)
-
-Enable ENABLE_PLOTS = True to generate Max Pain and PCR charts
-
-📂 Output Structure
+### 📂 Output Structure
+```bash
 monthly_options_view/
-├── Equity_MaxPain_Summary/
+├── Equity_Expiry_MaxPain/                 # ⚡ Expiry-wise Max Pain summaries
 │   ├── Equity_MaxPain_2025-08-28.csv
 │   ├── Equity_MaxPain_2025-09-04.csv
 │   └── Equity_MaxPain_2025-09-11.csv
 │
-├── PCR_Summaries/
-│   ├── PCR_2025-08-28.csv
-│   ├── PCR_2025-09-04.csv
-│   └── PCR_2025-09-11.csv
+├── PCR_2025-08-28.csv                     # 📈 Expiry-wise Put-Call Ratios
+├── PCR_2025-09-04.csv
+├── PCR_2025-09-11.csv
 │
-├── Equities/
-│   ├── RELIANCE/
-│   │   ├── RELIANCE_2025-08-28.csv
-│   │   ├── RELIANCE_2025-09-04.csv
-│   │   └── RELIANCE_2025-09-11.csv
-│   └── ...
+├── NIFTY/                                 # 🧮 NIFTY option chain data
+│   ├── NIFTY_2025-08-28.csv
+│   ├── NIFTY_2025-09-04.csv
+│   ├── NIFTY_2025-09-11.csv
+│   ├── NIFTY_MaxPain_Summary.csv
+│   └── PCR_NIFTY.csv
 │
-└── Indices/
-    ├── NIFTY/
-    │   ├── NIFTY_2025-08-28.csv
-    │   ├── NIFTY_2025-09-04.csv
-    │   ├── NIFTY_2025-09-11.csv
-    │   └── PCR_NIFTY.csv
-    │
-    └── BANKNIFTY/
-        ├── BANKNIFTY_2025-08-28.csv
-        ├── BANKNIFTY_2025-09-04.csv
-        ├── BANKNIFTY_2025-09-11.csv
-        └── PCR_BANKNIFTY.csv
+└── BANKNIFTY/                             # 🧮 BANKNIFTY option chain data
+    ├── BANKNIFTY_2025-08-28.csv
+    ├── BANKNIFTY_2025-09-04.csv
+    ├── BANKNIFTY_2025-09-11.csv
+    ├── BANKNIFTY_MaxPain_Summary.csv
+    └── PCR_BANKNIFTY.csv
+```
 
-🚀 Installation
+---
 
-1. Clone the Repository
+## ⚙️ Installation
 
-git clone https://github.com/<your-username>/Options_Market_Analyzer.git
-cd Options_Market_Analyzer
+### 1. Clone the Repository
+```bash
+git clone https://github.com/<your-username>/OptionAnalyticsAutomation.git
+cd OptionAnalyticsAutomation
+```
 
-
-2. Create a Virtual Environment (Recommended)
-
+### 2. Create a Virtual Environment (recommended)
+```bash
 python -m venv venv
-source venv/bin/activate      # macOS/Linux
-venv\Scripts\activate         # Windows
+source venv/bin/activate   # On Windows: venv\Scripts\activate
+```
 
-
-3. Install Dependencies
-
+### 3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
-🧠 Usage
+---
 
-Run the main script (replace with your entry script name if different):
+## 🚀 Usage
 
+### 1. Run the main script
+```bash
 python main.py
+```
 
+### 2. Enable plots (optional)
+Edit the configuration in the script:
+```python
+ENABLE_PLOTS = True
+```
 
-After execution, you’ll get:
+### 3. View Outputs
+All CSVs and summaries will be saved in the `monthly_options_view/` folder.  
+Use Excel, Pandas, or visualization libraries (Matplotlib, Plotly) for further analysis.
 
-Expiry-wise Max Pain summaries in Equity_MaxPain_Summary/
+---
 
-PCR summaries in PCR_Summaries/
-
-Individual equity and index CSVs in their respective folders
-
-Optional visualization:
-
-python main.py --plot
-
-📦 Requirements
-
-Core dependencies:
-
-pandas  
-numpy  
-requests  
-matplotlib  
-tqdm  
+## 🧩 Dependencies
+Core libraries used:
+```
+requests
+pandas
+numpy
 concurrent.futures
+matplotlib (optional)
+```
 
-🧠 About
+Ensure you have **Python 3.8+** installed.
 
-This project integrates Option Pain Theory and Put-Call Ratio (PCR) Analysis into a unified framework for the Indian derivatives market, enabling users to track option sentiment, identify Max Pain levels, and assess market bias with a scalable, data-driven approach.
+---
 
-📬 Contact
+## 🧠 Applications
+- Quantitative Options Research
+- Market Sentiment & Expiry Bias Tracking
+- Strategy Backtesting (Max Pain & PCR-based filters)
+- Volatility & Derivative Data Visualization
 
-For questions or collaboration opportunities:
-📧 darshitsarda10@gmail.com
+---
+
+## 🤝 Contributing
+Contributions are welcome! If you'd like to improve functionality, optimize performance, or add new features:
+1. Fork the repository
+2. Create a new branch (`feature/new-feature`)
+3. Commit and push your changes
+4. Open a Pull Request
+
+---
+
+## 📜 License
+This project is licensed under the **MIT License** — see the LICENSE file for details.
+
+---
+
+## 📬 Contact
+**Author:** Darshit Sarda  
+**Email:** darshitsarda10@gmail.com  
+**Email:** darshitsarda10@gmail.com  
+**LinkedIn:** [linkedin.com/in/darshitsarda](https://www.linkedin.com/in/darshitsarda)  
+**GitHub:** [github.com/DarshitSarda](https://github.com/DarshitSarda)
