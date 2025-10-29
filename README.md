@@ -66,7 +66,7 @@ monthly_options_view/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/<your-username>/OptionAnalyticsAutomation.git
+git clone https://github.com/DarshitSarda/OptionAnalyticsAutomation.git
 cd OptionAnalyticsAutomation
 ```
 
