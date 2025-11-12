@@ -369,13 +369,10 @@ dashboard_for('TECHM', expiry='25-Nov-2025', capital=200000)
 1. **Options Market Microstructure**  
    - Easley, D., O'Hara, M., & Srinivas, P. (1998). "Option Volume and Stock Prices." *Journal of Finance*, 53(2), 431-465.
 
-2. **Put-Call Ratio as Sentiment Indicator**  
-   - Pan, J., & Poteshman, A. M. (2006). "The Information in Option Volume for Future Stock Prices." *Review of Financial Studies*, 19(3), 871-908.
-
-3. **Max Pain Theory**  
+2. **Max Pain Theory**  
    - Ni, S. X., Pan, J., & Poteshman, A. M. (2008). "Volatility Information Trading in Option Markets." *Journal of Finance*, 63(3), 1059-1091.
 
-4. **Black-Scholes & Greeks**  
+3. **Black-Scholes & Greeks**  
    - Hull, J. C. (2018). *Options, Futures, and Other Derivatives* (10th ed.). Pearson.
 
 ---
